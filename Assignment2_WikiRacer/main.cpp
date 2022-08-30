@@ -40,10 +40,8 @@ using std::unordered_set;   using std::cin;
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // BEGIN STUDENT CODE HERE
 int numCommonLinks(const unordered_set<string>& curr_set, const unordered_set<string>& target_set) {
-    // replace all of these lines!
-    (void) target_set;
-    (void) curr_set;
-    return 0; 
+    auto search_fn = [&target_set] (const string& s) { return target_set.count(s); };
+    return std::count_if(curr_set.begin(), curr_set.end(), search_fn);
 }
 // END STUDENT CODE HERE
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,12 +62,9 @@ vector<string> findWikiLadder(const string& start_page, const string& end_page) 
     ///////////////////////////////////////////////////////////////////////////////////////////////////
     // BEGIN STUDENT CODE HERE
     auto cmp_fn = [&w, &target_set](const vector<string>& left, const vector<string>& right) {
-        // replace all of these lines.
-        (void) w;
-        (void) target_set;
-        (void) left;
-        (void) right;
-        return false; // replace this line! make sure to use numCommonLinks.
+        auto left_set = w.getLinkSet(left.back());
+        auto right_set = w.getLinkSet(right.back());
+        return numCommonLinks(left_set, target_set) < numCommonLinks(right_set, target_set);
     };
     // END STUDENT CODE HERE
     ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -83,10 +78,7 @@ vector<string> findWikiLadder(const string& start_page, const string& end_page) 
     // BEGIN STUDENT CODE HERE
     // something like priority_queue<...> queue(...);
     // please delete ALL 4 of these lines! they are here just for the code to compile.
-    std::priority_queue<vector<string>> queue;
-    throw std::invalid_argument("Not implemented yet.\n");
-    return {};
-
+    std::priority_queue<vector<string>, container, decltype(cmp_fn)> queue {cmp_fn};
     // END STUDENT CODE HERE
     ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -99,6 +91,7 @@ vector<string> findWikiLadder(const string& start_page, const string& end_page) 
         string curr = curr_path.back();
 
         auto link_set = w.getLinkSet(curr);
+        cout << curr << " " << link_set.size() << endl;
 
         /*
          * Early check for whether we have found a ladder.
@@ -117,6 +110,11 @@ vector<string> findWikiLadder(const string& start_page, const string& end_page) 
                 vector<string> new_path = curr_path;
                 new_path.push_back(neighbour);
                 queue.push(new_path);
+                cout << "Updated: " << neighbour << " "
+                    << queue.size() << " " << queue.top().back() << " ";
+                auto left_set = w.getLinkSet(queue.top().back());
+                auto right_set = w.getLinkSet(end_page);
+                cout << numCommonLinks(left_set, right_set) << endl;
             }
         }
     }
