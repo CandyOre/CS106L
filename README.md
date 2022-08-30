@@ -9,6 +9,9 @@ Stanford CS106L is a course about Standard C++ Programming. There will be a list
 ### Official
 
 - [[Newest][Spring 2022] Course Website](http://web.stanford.edu/class/cs106l/index.html)
+- [Assignment1 Starter Code](https://github.com/snme/cs106L-assignment1)
+- [Assignment2 Starter Code](https://github.com/snme/cs106L-assignment2)
+- [[Download] Assignment3 Starter Code](http://web.stanford.edu/class/cs106l/assignments/HashMap_Starter.zip)
 
 ### Unofficial
 
