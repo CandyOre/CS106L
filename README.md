@@ -18,4 +18,4 @@ Stanford CS110L is a course about Standard C++ Programming. There will be a list
 
 |Date   |Lecture    |Assignment |Time   |
 |:-:    |:-:        |:-:        |:-:    |
-|       |           |           |       |
+|0829   |01-03pt5   |           |1h     |
