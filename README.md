@@ -19,3 +19,4 @@ Stanford CS106L is a course about Standard C++ Programming. There will be a list
 |Date   |Lecture    |Assignment |Time   |
 |:-:    |:-:        |:-:        |:-:    |
 |0829   |01-03pt5   |           |1h     |
+|0830   |04-09      |WikiRacer  |4h     |
