@@ -27,8 +27,9 @@ using std::unordered_map;   using std::unordered_set;
 // BEGIN STUDENT CODE HERE
 bool valid_wikilink(const string& link) {
     // replace these lines!
-    (void) link;
-    throw std::invalid_argument("Not implemented yet.\n");
+    auto sharp = std::find(link.begin(), link.end(), '#');
+    auto colon = std::find(link.begin(), link.end(), ':');
+    return sharp == link.end() && colon == link.end();
 }
 // END STUDENT CODE HERE
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -53,7 +54,11 @@ unordered_set<string> findWikiLinks(const string& inp) {
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         // BEGIN STUDENT CODE HERE
         // Please delete this line when you start working!
-        throw std::invalid_argument("Not implemented yet.\n");
+        url_start = std::search(url_start, end, delim.begin(), delim.end());
+        if (url_start == end) {
+            break;
+        }
+        url_start += delim.end() - delim.begin();
         // END STUDENT CODE HERE
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -66,7 +71,7 @@ unordered_set<string> findWikiLinks(const string& inp) {
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         // BEGIN STUDENT CODE HERE (delete/edit this line)
-        auto url_end = url_start;
+        auto url_end = std::find(url_start, end, '\"');
         // END STUDENT CODE HERE
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -77,7 +82,7 @@ unordered_set<string> findWikiLinks(const string& inp) {
         
         ///////////////////////////////////////////////////////////////////////////////////////////////////
         // BEGIN STUDENT CODE HERE (delete/edit this line)
-        string link;
+        string link(url_start, url_end);
         // END STUDENT CODE HERE
         ///////////////////////////////////////////////////////////////////////////////////////////////////
 
