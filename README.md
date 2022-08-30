@@ -1,8 +1,8 @@
-# CS110L: Safety in Systems Programming
+# CS106L: Standard C++ Programming
 
 ## Description
 
-Stanford CS110L is a course about Standard C++ Programming. There will be a list of "what I learned" when I finished the course.
+Stanford CS106L is a course about Standard C++ Programming. There will be a list of "what I learned" when I finished the course.
 
 ## Resources
 
