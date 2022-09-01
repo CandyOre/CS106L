@@ -23,3 +23,4 @@ Stanford CS106L is a course about Standard C++ Programming. There will be a list
 |:-:    |:-:        |:-:        |:-:    |
 |0829   |01-03pt5   |           |1h     |
 |0830   |04-09      |WikiRacer  |4h     |
+|0901   |10-15      |HashMap    |4h     |
