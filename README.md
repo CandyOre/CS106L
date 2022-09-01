@@ -2,7 +2,14 @@
 
 ## Description
 
-Stanford CS106L is a course about Standard C++ Programming. There will be a list of "what I learned" when I finished the course.
+Stanford CS106L is a course about Standard C++ Programming. I found this course quite easy after I finished CS110L, which is about Safety in System Programming in Rust Language. There is a list of "what I learned - what I have learned" for your reference.
+
+1. STL Stream
+2. Const Correctness
+3. Special Member Functions
+4. Move Semantics
+5. C++ Project Structure & Makefile Basics
+
 
 ## Resources
 
@@ -16,6 +23,7 @@ Stanford CS106L is a course about Standard C++ Programming. There will be a list
 ### Unofficial
 
 - [PKUFlyingPig](https://github.com/PKUFlyingPig/CS106L)
+
 
 ## Progress
 
